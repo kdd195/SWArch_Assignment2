@@ -12,7 +12,8 @@ Github:
 Joseph Sommer jjs451; 
 Github: 
 
-Programming language: 
-Storage scheme: 
+Programming language: C++
+
+Storage scheme: Static file
 
 The workflow will essentially be centralized workflow. Each person testing the code locally on their own machine and pushing the product to the respository once their section is complete.
