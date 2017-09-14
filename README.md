@@ -1,9 +1,16 @@
 # SWArch_Assignment2
 
-Kortni Dees kdd195
-Samuel Coley sdc285
-Thomas Marandi tm1383
-Joseph Sommer jjs451
+Kortni Dees kdd195; 
+Github: kdd195
+
+Samuel Coley sdc285; 
+Github: DavidColey
+
+Thomas Marandi tm1383; 
+Github:
+
+Joseph Sommer jjs451; 
+Github: 
 
 Programming language: 
 Storage scheme: 
