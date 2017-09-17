@@ -57,6 +57,8 @@ int main(int argc, char *argv[])
 
 			// gets the rest of the user information
 			data.erase(0, data.find(delimiter) + delimiter.length());
+			string name = data.substr(0, data.find(delimiter));
+			data.erase(0, data.find(delimiter) + delimiter.length());
 			string email = data.substr(0, data.find(delimiter));
 			data.erase(0, data.find(delimiter) + delimiter.length());
 			string shipping = data.substr(0, data.find(delimiter));
@@ -66,6 +68,12 @@ int main(int argc, char *argv[])
 			string payment = data.substr(0, data.find(delimiter));
 			data.erase(0, data.find(delimiter) + delimiter.length());
 			string phone = data.substr(0, data.find(delimiter));
+
+			// cout << name << " " << email << endl;
+			// cout << shipping << endl;
+			// cout << billing << endl;
+			// cout << payment << endl;
+			// cout << phone << endl;
 
 			// strings of email, billing address, shipping address,
 			// payment information, and phone number now exist
