@@ -1,4 +1,4 @@
 kdd195<+temp<+Kortni Dees<+kdd195@msstate.edu<+1234 Fake Rd Starkville MS 39759<+1234 Fake Rd Starkville MS 39759<+1234567812345678<+9015555555
 samuel<+password<+Samuel Coley<+this@gmail.com<+222 Road Starkville MS 39759<+222 Road Starkville MS 39759<+1234567812345678<+9012222222
-thisuser<+otherpassword<+temp@gmail.com<+111 This Street Drummonds TN 38023<+7489 Cool Rd Memphis TN 38135<+1234567812345678<+6628392011
-cool<+coolbeans<+yo@msstate.edu<+12345 Awesome Blvd Monticello MS 99999<+12345 Awesome Blvd Monticello MS 99999<+8765432187654321<+6017382919
+thisuser<+otherpassword<+Thomas Marandi<+temp@gmail.com<+111 This Street Drummonds TN 38023<+7489 Cool Rd Memphis TN 38135<+1234567812345678<+6628392011
+cool<+coolbeans<+Joseph Sommer<+yo@msstate.edu<+12345 Awesome Blvd Monticello MS 99999<+12345 Awesome Blvd Monticello MS 99999<+8765432187654321<+6017382919
