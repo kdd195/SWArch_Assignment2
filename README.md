@@ -10,7 +10,7 @@ Thomas Marandi tm1383;
 Github:
 
 Joseph Sommer jjs451; 
-Github: 
+Github: jjs451
 
 Programming language: C++
 
