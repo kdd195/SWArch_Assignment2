@@ -7,8 +7,10 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <vector>
 #include "inventory.h"
 #include "cart.h"
+#include "orderHistory.h"
 
 using namespace std;
 
@@ -28,6 +30,9 @@ int main(int argc, char *argv[])
 
 	// gets temporary buffer to get lines from the file
 	string data;
+
+	// declare vector to hold data needed later to initialize orderHistory
+	vector<string> userData;
 
 	// variable to set flag for successful login
 	// 1 is logged in
@@ -79,6 +84,12 @@ int main(int argc, char *argv[])
 
 			// strings of email, billing address, shipping address,
 			// payment information, and phone number now exist
+			userData.push_back(name);
+			userData.push_back(payment);
+			userData.push_back(email);
+			userData.push_back(shipping);
+			userData.push_back(billing);
+			userData.push_back(phone);
 		}
 	}
 
@@ -105,6 +116,11 @@ int main(int argc, char *argv[])
 	// gets input from the command line
 	cin >> option;
 	cout << endl;
+
+	// initialize order history
+	orderHistory history(userData[0], userData[1], userData[2], userData[3], userData[4], userData[5]);
+	history.viewHistory();
+
 
 	// initializes cart class
 	string file = "cart.txt";
@@ -216,18 +232,20 @@ int main(int argc, char *argv[])
 
 					// gets the size
 					// initializes the array
+					// switched from array to vector to be more C++ compliant - JS
 					int size = userCart.getQuantity();
-					string cartItems[size];
+					vector<string> cartItems;
 
 					// adds items to the array
 					for(int i = 0; i < size; i++)
 					{
-						cartItems[i] = userCart.getItem(i);
+						cartItems.push_back(userCart.getItem(i));
 					}
 
 					float total = userCart.getTotal();
-
 					// this is where you'd add items to the order history
+					history.addToHistory(cartItems, size, total);
+					cout << "Order placed and logged in history" << endl;
 				}
 
 				else
@@ -241,7 +259,19 @@ int main(int argc, char *argv[])
 		// provides a back functionality
 		else if(option == 3)
 		{
-			cout << "Order history" << endl;
+			cout << history.viewHistory() << endl;
+			while(1){
+				int prompt;
+				cout << "Enter 0 to go back" << endl;
+				cin >> prompt;
+
+				if(prompt == 0)
+				{
+					option = 0;
+					break;
+				}
+			}
+
 		}
 
 		// handles logging out

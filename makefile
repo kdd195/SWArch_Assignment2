@@ -1,7 +1,8 @@
 DRIVEROBJ=\
 	driver.o\
 	inventory.o\
-	cart.o
+	cart.o\
+	orderHistory.o
 
 all: driver
 
@@ -16,6 +17,9 @@ inventory.o: inventory.cpp
 
 cart.o: cart.cpp
 	g++ -c -o cart.o cart.cpp
+
+orderHistory.o: orderHistory.cpp
+	g++ -c -o orderHistory.o orderHistory.cpp
 
 clean:
 	\rm *.o driver
