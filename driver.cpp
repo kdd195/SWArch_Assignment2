@@ -8,6 +8,7 @@
 #include <fstream>
 #include <string>
 #include "inventory.h"
+#include "cart.h"
 
 using namespace std;
 
@@ -105,6 +106,10 @@ int main(int argc, char *argv[])
 	cin >> option;
 	cout << endl;
 
+	// initializes cart class
+	string file = "cart.txt";
+	cart userCart(file, username);
+
 	while(1)
 	{
 		// the user chose to go back
@@ -162,6 +167,9 @@ int main(int argc, char *argv[])
 					cout << "Successfully added item to the cart!" << endl;
 					string item = items.getItem(prompt);
 					float price = items.getPrice(prompt);
+
+					// adds item to the cart
+					userCart.addToCart(username, item, price);
 				}
 
 				else
@@ -175,7 +183,58 @@ int main(int argc, char *argv[])
 		// also the place checking out would commence
 		else if(option == 2)
 		{
-			cout << "Viewing cart" << endl;
+			// initializes variable for menu
+			int prompt;
+
+			// Begins the menu for the user to select from
+			cout << "0. Go Back" << endl;
+
+			// prints the cart to view
+			userCart.printCart();
+
+			while(1)
+			{
+				cout << "Enter 0 to go back" << endl;
+				cout << "Or enter -1 to checkout: ";
+
+				cin >> prompt;
+
+				if(prompt == 0)
+				{
+					option = 0;
+					break;
+				}
+
+				else if(prompt > 0 && prompt < (userCart.getQuantity() + 1))
+				{
+					// this is where remove from cart will go
+				}
+
+				else if(prompt == -1)
+				{
+					// this is where check out will go
+
+					// gets the size
+					// initializes the array
+					int size = userCart.getQuantity();
+					string cartItems[size];
+
+					// adds items to the array
+					for(int i = 0; i < size; i++)
+					{
+						cartItems[i] = userCart.getItem(i);
+					}
+
+					float total = userCart.getTotal();
+
+					// this is where you'd add items to the order history
+				}
+
+				else
+				{
+					cout << "Sorry, your entry was not a valid entry. Please try again." << endl;
+				}
+			}
 		}
 
 		// handles viewing the order history
