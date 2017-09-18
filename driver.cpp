@@ -7,6 +7,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "inventory.h"
 
 using namespace std;
 
@@ -106,11 +107,68 @@ int main(int argc, char *argv[])
 
 	while(1)
 	{
+		// the user chose to go back
+		if(option == 0)
+		{
+			// displays a menu to the user
+			cout << endl;
+			cout << "You've gone back!" << endl;
+			cout << "1. View inventory items" << endl;
+			cout << "2. View your cart" << endl;
+			cout << "3. View your order history" << endl;
+			cout << "4. Logout" << endl;
+			cout << "Please pick an option from the list (1-4): ";
+
+			cin >> option;
+			cout << endl;
+		}
+
 		// handles printing the inventory
 		// also the place where adding to cart happens, etc
-		if(option == 1)
+		else if(option == 1)
 		{
-			cout << "Inventory" << endl;
+			string filename = "inventory.txt";
+			int prompt;
+
+			// creates an instance of the inventory class
+			inventory items(filename);
+
+			// starts a menu
+			cout << "0. Go Back" << endl;
+			cout << endl;
+
+			items.printItems();
+
+			while(1)
+			{
+				// prints prompt to user
+				cout << "Please enter 0 to return to the main menu" << endl;
+				cout << "Or enter the number of item you'd like to add to your cart: ";
+
+				// gets in the prompt number
+				cin >> prompt;
+				cout << endl;
+
+				// the user chose to go back
+				if(prompt == 0)
+				{
+					option = 0;
+					break;
+				}
+
+				// stores variables to use in add to cart
+				else if(prompt > 0 && prompt < 13)
+				{
+					cout << "Successfully added item to the cart!" << endl;
+					string item = items.getItem(prompt);
+					float price = items.getPrice(prompt);
+				}
+
+				else
+				{
+					cout << "Sorry, your entry was not a valid entry. Please try again." << endl;
+				}
+			}
 		}
 
 		// handles viewing the cart
@@ -141,8 +199,9 @@ int main(int argc, char *argv[])
 		{
 			// gets new input
 			cout << "Sorry, your entry was not a valid option. Try again: ";
-
 			cin >> option;
+
+			cout << endl;
 		}
 	}
 
