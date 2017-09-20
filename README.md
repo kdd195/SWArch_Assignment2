@@ -17,3 +17,5 @@ Programming language: C++
 Storage scheme: Static file
 
 The workflow will essentially be centralized workflow. Each person testing the code locally on their own machine and pushing the product to the respository once their section is complete.
+
+Report Google document: https://drive.google.com/open?id=17ae1cH-LxeEmxstg9O7KsrKgPglIae_gQ8nowzG9ph4
