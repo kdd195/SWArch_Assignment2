@@ -5,6 +5,7 @@
 // Author: Samuel Coley
 
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -14,18 +15,22 @@ using namespace std;
 class inventory
 {
   private:
-    string items[12];
-    string descriptions[12];
-    string categories[12];
-    float prices[12];
-    int quantities[12];
+    vector<string> items;
+    vector<string> descriptions;
+    vector<string> categories;
+    vector<string> attribute1;
+    vector<string> attribute2;
+    vector<float> prices;
+    vector<int> quantities;
+    int numberItems;
 
   public:
     inventory(string filename);
   	void printItems();
     string getItem(int ID);
     float getPrice(int ID);
-    void updateInventory(int ID);
+    void updateInventory(string item);
+    int getNumberItems();
 };
 
 #endif

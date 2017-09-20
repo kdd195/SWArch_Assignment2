@@ -1,12 +1,15 @@
-1<+Toaster<+Household Items<+45<+15.99<+This toaster will toast your bread to perfection
-2<+Vacuum Cleaner<+Household Items<+12<+60.99<+This is the next best thing after a Dyson
-3<+Toothpaste<+Household Items<+15<+5.98<+This is number 2 dentist recommended
-4<+Software Design Book<+Books<+11<+40.99<+This is the leading premier text book in Software Design
-5<+Human-Computer Interaction Book<+Books<+28<+150.99<+A very good book
-6<+Coding for Dummies<+Books<+17<+25.99<+Highly recommended by Samuel Coley for all your coding needs
-7<+Easy Bake Oven<+Toys<+22<+35.99<+Teach your kid how to burn food with a light bulb
-8<+Legos<+Toys<+58<+15.99<+Legos. Because what else would you step on in the dark.
-9<+Winnie the Pooh Stuffed Animal<+Toys<+6<+12.99<+For all your snuggling needs
-10<+iPhone X<+Small Electronics<+90<+999.99<+A too-expensive phone that has "innovative" design designed with "courage" in mind
-11<+Canon DSLR<+Small Electronics<+13<+200.00<+A camera to take pictures with
-12<+SNES Classic Edition<+Small Electronics<+10<+80.99<+Small stock because Nintendo can't predict supply and demand accurately
+1<+Toaster<+Household Items<+45<+15.99<+This toaster will toast your bread to perfection<+Kitchen<+No
+2<+Vacuum Cleaner<+Household Items<+12<+60.99<+This is the next best thing after a Dyson<+Living Room<+Yes
+3<+Toothpaste<+Household Items<+15<+5.98<+This is number 2 dentist recommended<+Bathroom<+No
+4<+Software Design Book<+Books<+11<+40.99<+This is the leading premier text book in Software Design<+8574920148291<+Byron Williams
+5<+Human-Computer Interaction Book<+Books<+28<+150.99<+A very good book<+4910348502011<+Donna Reese
+6<+Coding for Dummies<+Books<+17<+25.99<+Highly recommended by Samuel Coley for all your coding needs<+4358929148198<+Devin Neal
+7<+Easy Bake Oven<+Toys<+22<+35.99<+Teach your kid how to burn food with a light bulb<+8-10<+No
+8<+Legos<+Toys<+58<+15.99<+Legos. Because what else would you step on in the dark.<+8-10<+No
+9<+Winnie the Pooh Stuffed Animal<+Toys<+6<+12.99<+For all your snuggling needs<+0-3<+No
+10<+iPhone X<+Small Electronics<+90<+999.99<+A too-expensive phone that has "innovative" design designed with "courage" in mind<+Apple<+Phone
+11<+Canon DSLR<+Small Electronics<+13<+200.00<+A camera to take pictures with<+Canon<+Camera
+12<+SNES Classic Edition<+Small Electronics<+10<+80.99<+Small stock because Nintendo can't predict supply and demand accurately<+Nintendo<+Console Game
+13<+Wedding Dress<+Clothes<+5<+599.99<+A perfect dress to have nuptials in<+Women<+Dress
+14<+Sperry Boat Shoes<+Clothes<+26<+49.99<+Your standard boat shoe<+Men<+Shoes
+15<+Levi Jeans<+Clothes<+54<+39.99<+Levi jeans are good<+Women<+Bottoms

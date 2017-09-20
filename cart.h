@@ -5,6 +5,7 @@
 // Author: Thomas Marandi
 
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -14,8 +15,8 @@ using namespace std;
 class cart
 {
   private:
-    string items[100];
-    float prices[100];
+    vector<string> items;
+    vector<float> prices;
     int quantity;
     float total;
 

@@ -121,6 +121,8 @@ int main(int argc, char *argv[])
 	orderHistory history(userData[0], userData[1], userData[2], userData[3], userData[4], userData[5]);
 	history.viewHistory();
 
+	// creates an instance of the inventory class
+	inventory items("inventory.txt");
 
 	// initializes cart class
 	string file = "cart.txt";
@@ -148,11 +150,7 @@ int main(int argc, char *argv[])
 		// also the place where adding to cart happens, etc
 		else if(option == 1)
 		{
-			string filename = "inventory.txt";
 			int prompt;
-
-			// creates an instance of the inventory class
-			inventory items(filename);
 
 			// starts a menu
 			cout << "0. Go Back" << endl;
@@ -178,7 +176,7 @@ int main(int argc, char *argv[])
 				}
 
 				// stores variables to use in add to cart
-				else if(prompt > 0 && prompt < 13)
+				else if(prompt > 0 && prompt < items.getNumberItems()+1)
 				{
 					cout << "Successfully added item to the cart!" << endl;
 					string item = items.getItem(prompt);
@@ -211,6 +209,7 @@ int main(int argc, char *argv[])
 			while(1)
 			{
 				cout << "Enter 0 to go back" << endl;
+				cout << "Or enter the number of the item you'd like to remove from the cart" << endl;
 				cout << "Or enter -1 to checkout: ";
 
 				cin >> prompt;
@@ -224,12 +223,11 @@ int main(int argc, char *argv[])
 				else if(prompt > 0 && prompt < (userCart.getQuantity() + 1))
 				{
 					// this is where remove from cart will go
+					userCart.removeFromCart(username, prompt);
 				}
 
 				else if(prompt == -1)
 				{
-					// this is where check out will go
-
 					// gets the size
 					// initializes the array
 					// switched from array to vector to be more C++ compliant - JS
@@ -240,12 +238,23 @@ int main(int argc, char *argv[])
 					for(int i = 0; i < size; i++)
 					{
 						cartItems.push_back(userCart.getItem(i));
+
+						// updates inventory for that item
+						items.updateInventory(userCart.getItem(i));
 					}
 
 					float total = userCart.getTotal();
 					// this is where you'd add items to the order history
 					history.addToHistory(cartItems, size, total);
 					cout << "Order placed and logged in history" << endl;
+					cout << endl;
+
+					// this is where check out will go
+					userCart.checkout(username);
+
+					// goes back to main menu
+					option = 0;
+					break;
 				}
 
 				else
